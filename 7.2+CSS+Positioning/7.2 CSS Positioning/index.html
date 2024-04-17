@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>CSS Positioning Exercise</title>
+    <style>
+      body {
+        background-color: #4793af;
+        color: aliceblue;
+        font-family: monospace;
+        text-align: center;
+      }
+      h1 {
+        font-size: 3rem;
+        text-align: center;
+        text-transform: capitalize;
+      }
+      h1 span {
+        border-bottom: 2px solid aliceblue;
+        padding: 0.25em 1em;
+      }
+      .demo {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 1em;
+      }
+      .demo-example {
+        width: 40vw;
+        border: 3px solid aliceblue;
+        padding: 1em 1.5em;
+      }
+      .square {
+        width: 20vw;
+        height: 200px;
+        background-color: #ffc470;
+      }
+      #square2 {
+        background-color: #dd5746;
+      }
+
+      #relative-pos > #square2 {
+        position: relative;
+        left: 20vw;
+      }
+
+      #absolute-pos #square1 {
+        position: relative;
+      }
+      #absolute-pos #square2 {
+        position: absolute;
+        top: 50px;
+        left: 50px;
+      }
+
+      #fixed-pos #square1 {
+        position: fixed;
+        bottom: 50px;
+        right: 0;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h1><span>CSS Positioning</span></h1>
+    <div class="demo">
+      <div class="demo-example" id="static-pos">
+        <h3>Static</h3>
+        <div class="square" id="square1"></div>
+        <div class="square" id="square2"></div>
+      </div>
+      <div class="demo-example" id="relative-pos">
+        <h3>Relative</h3>
+        <div class="square" id="square1"></div>
+        <div class="square" id="square2"></div>
+      </div>
+      <div class="demo-example" id="absolute-pos">
+        <h3>Absolute</h3>
+        <div class="square" id="square1">
+          <span>relative</span>
+          <div class="square" id="square2"><span>absolute</span></div>
+        </div>
+      </div>
+      <div class="demo-example" id="fixed-pos">
+        <h3>Fixed</h3>
+        <div class="square" id="square1"><span>fixed</span></div>
+        <div class="square" id="square2"></div>
+      </div>
+    </div>
+  </body>
+</html>
