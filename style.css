@@ -1,0 +1,22 @@
+:root {
+  --main-bg-color: #f1eedc;
+  --primary-color: #e5ddc5;
+  --light-accent-color: #bed7dc;
+  --dark-accent-color: #b3c8cf;
+}
+
+body {
+  background-color: var(--main-bg-color);
+}
+
+.btn-home {
+  background-color: var(--light-accent-color);
+  padding: 1em;
+  border: none;
+  border-radius: 3px;
+  margin-top: 2em;
+}
+.btn-home a {
+  text-decoration: none;
+  color: black;
+}
