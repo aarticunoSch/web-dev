@@ -1,0 +1,44 @@
+:root {
+  --gap: #000;
+  --white: #f0f1ec;
+  --red: #e72f24;
+  --black: #232629;
+  --blue: #004592;
+  --yellow: #f9d01e;
+}
+
+body {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+  margin: 0;
+}
+
+.painter {
+    background-color: var(--gap);
+    display: grid;
+    gap: 9px;
+  }
+
+.piece {
+  background-color: var(--white);
+}
+
+.red {
+  background-color: var(--red);
+}
+
+.blue {
+  background-color: var(--blue);
+}
+
+.yellow {
+  background-color: var(--yellow);
+}
+
+.gray {
+  background-color: var(--black);
+  row-gap: 10px;
+}
