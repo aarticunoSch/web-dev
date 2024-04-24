@@ -1,61 +1,135 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Flex Direction</title>
-  <!-- HINT:
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Flex Direction</title>
+    <!-- HINT:
   https://developer.mozilla.org/en-US/docs/Web/CSS/Universal_selectors
   https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/Selectors/Combinators 
   -->
-  <style>
-    .container {
-      color: white;
-      border: 5px solid gold;
-      display: flex;
-      height: 70vh;
-      align-items: center;
-      justify-content:center ;
-    }
+    <style>
+      body {
+        padding: 0;
+        margin: 0;
+      }
+      .container {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        font-weight: bold;
+        text-align: center;
+        
+      }
 
-    /*
+      .container > * {
+        padding: 0.5em;
+        flex: 1 100%;
+      }
+
+      .header {
+        background-color: #ff204e;
+      }
+      .main {
+        background-color: #496989;
+      }
+      .aside1 {
+        background-color: #58a399;
+      }
+      .aside2 {
+        background-color: #a8cd9f;
+      }
+      .footer {
+        background-color: #e2f4c5;
+      }
+
+      .rainbow {
+        display: flex;
+        flex-wrap: wrap;
+        padding: 1em;
+        gap: 6px;
+      }
+      .rainbow > * {
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        margin: auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      /* Medium screen */
+      @media all and (min-width: 600px) {
+        .aside {
+          flex: 1 0 0;
+        }
+      }
+
+      @media all and (min-width: 800px) {
+        .main {
+          flex: 3 0px;
+        }
+        .aside1 {
+          order: 1;
+        }
+        .main {
+          order: 2;
+        }
+        .aside1 {
+          order: 3;
+        }
+        .footer {
+          order: 4;
+        }
+      }
+
+      /*
 Select all the elements that are the direct
 children of the .container class.
     */
-    .container > * {
-      width: 100px;
-    }
 
-    .indigo{
-      align-self: flex-start;
-    }
+      .red {
+        background-color: #eb4d4b;
+      }
+      .orange {
+        background-color: #f0932b;
+      }
+      .yellow {
+        background-color: #f6e58d;
+      }
+      .green {
+        background-color: #6ab04c;
+      }
+      .blue {
+        background-color: #4834d4;
+      }
+      .indigo {
+        background-color: #30336b;
+      }
+      .purple {
+        background-color: #be2edd;
+      }
+    </style>
+  </head>
 
-    .orange{
-      align-self: flex-end;
-    }
-
-    .red {background-color: #eb4d4b;}
-    .orange {background-color: #f0932b;}
-    .yellow {background-color: #f6e58d;}
-    .green {background-color: #6ab04c;}
-    .blue {background-color: #4834d4;}
-    .indigo {background-color: #30336b;}
-    .purple {background-color: #be2edd;}
-  </style>
-</head>
-
-<body>
-  <div class="container">
-    <div class="red">Red</div>
-    <div class="orange">Orange</div>
-    <div class="yellow">Yellow</div>
-    <div class="green">Green</div>
-    <div class="blue">Blue</div>
-    <div class="indigo">Indigo</div>
-    <div class="purple">Purple</div>
-  </div>
-  
-</body>
-
+  <body>
+    <div class="container">
+      <header class="header">Header</header>
+      <main class="main">
+        <div class="rainbow">
+          <div class="red">1. Red</div>
+          <div class="orange">2. Orange</div>
+          <div class="yellow">3. Yellow</div>
+          <div class="green">4. Green</div>
+          <div class="blue">5. Blue</div>
+          <div class="indigo">6. Indigo</div>
+          <div class="purple">7. Purple</div>
+        </div>
+      </main>
+      <aside class="aside aside1">Aside 1</aside>
+      <aside class="aside aside2">Aside 2</aside>
+      <footer class="footer">Footer</footer>
+    </div>
+  </body>
 </html>
