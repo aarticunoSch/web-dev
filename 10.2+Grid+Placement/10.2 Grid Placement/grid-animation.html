@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Grid Animation</title>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        padding: 0;
+        margin: 0;
+        height: 100vh;
+
+        display: flex;
+        flex-direction: column;
+      }
+
+      body > * {
+        flex: 1 auto;
+      }
+      
+      .grid-container {
+        --col: 9.9rem;
+        --row: 8rem;
+        --gap: 1rem;
+
+        height: 100%;
+        display: grid;
+
+        grid-template-columns: repeat(3, var(--col));
+        grid-template-rows: repeat(4, var(--row));
+        gap: var(--gap);
+
+        border: 5px solid yellowgreen;
+      }
+
+      .grid--full {
+        justify-content: space-between;
+        --col: calc(100% / 3);
+        --row: 1fr;
+      }
+
+      .grid-item {
+        background-color: brown;
+        border-radius: 0.5rem;
+        color: beige;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      button {
+        background-color: #123456;
+        color: beige;
+        font-size: 1rem;
+        font-weight: bold;
+        text-transform: uppercase;
+        letter-spacing: 4px;
+        border: none;
+        border-radius: 0.5rem;
+        padding: 1rem 2rem;
+        margin: 1.5rem 0;
+      }
+
+      @media (prefers-reduced-motion: no-preference) {
+        .grid-container {
+          transition: all 1s;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <button class="btn-action">Animation</button>
+    <div class="grid-container">
+      <div class="grid-item">
+        <h2>Item 1</h2>
+      </div>
+      <div class="grid-item">
+        <h2>Item 2</h2>
+      </div>
+      <div class="grid-item">
+        <h2>Item 3</h2>
+      </div>
+      <div class="grid-item">
+        <h2>Item 4</h2>
+      </div>
+      <div class="grid-item">
+        <h2>Item 5</h2>
+      </div>
+      <div class="grid-item">
+        <h2>Item 6</h2>
+      </div>
+      <div class="grid-item">
+        <h2>Item 7</h2>
+      </div>
+      <div class="grid-item">
+        <h2>Item 8</h2>
+      </div>
+      <div class="grid-item">
+        <h2>Item 9</h2>
+      </div>
+      <div class="grid-item">
+        <h2>Item 10</h2>
+      </div>
+      <div class="grid-item">
+        <h2>Item 11</h2>
+      </div>
+    </div>
+
+    <script>
+      document.querySelector(".btn-action").addEventListener("click", function () {
+        document.querySelector(".grid-container").classList.toggle("grid--full");
+      });
+    </script>
+  </body>
+</html>
